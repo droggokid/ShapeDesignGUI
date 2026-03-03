@@ -16,12 +16,14 @@ public class Main {
 
             JLabel label = new JLabel(Hello.greet(), SwingConstants.CENTER);
             label.setFont(new Font("Arial", Font.BOLD, 24));
-            label.setOpaque(false);
-            label.setForeground(Color.BLACK);
             gridBackgroundPanel.add(label, BorderLayout.CENTER);
+
 
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
+
+            gridBackgroundPanel.drawPoint(50, 50);
+            gridBackgroundPanel.drawPoint(100, 100);
         });
     }
 }
