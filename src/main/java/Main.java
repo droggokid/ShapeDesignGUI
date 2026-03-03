@@ -17,7 +17,7 @@ public class Main {
 
             JLabel label = new JLabel(Hello.greet(), SwingConstants.CENTER);
             label.setFont(new Font("Arial", Font.BOLD, 24));
-            //gridBackgroundPanel.add(label, BorderLayout.CENTER);
+            gridBackgroundPanel.add(label, BorderLayout.CENTER);
 
 
             frame.setLocationRelativeTo(null);
@@ -28,7 +28,7 @@ public class Main {
 
             var points = Draw.drawLine(100,100,300,300);
 
-            points.forEach(x -> gridBackgroundPanel.drawPoint((Integer) x._1, (Integer)x._2));
+            points.forEach(x -> gridBackgroundPanel.drawPoint((Integer) x._1(), (Integer)x._2()));
         });
     }
 }

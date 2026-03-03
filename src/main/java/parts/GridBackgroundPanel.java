@@ -29,7 +29,7 @@ public class GridBackgroundPanel extends JPanel {
     private void drawPoints(Graphics g) {
         g.setColor(Color.BLACK);
         for (Point p : points) {
-            g.fillOval(p.x - 5, p.y - 5, 10, 10);
+            g.fillOval(p.x - 1, p.y - 1, 3, 3);
         }
     }
 
