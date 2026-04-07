@@ -28,7 +28,10 @@ public class Main {
 
             var points = Draw.drawLine(100,100,300,300);
 
+            var circlePoints = Draw.drawCircle(400, 400, 100);
+
             points.forEach(x -> gridBackgroundPanel.drawPoint((Integer) x._1(), (Integer)x._2()));
+            circlePoints.forEach(x -> gridBackgroundPanel.drawPoint((Integer) x._1(), (Integer)x._2()));
         });
     }
 }
