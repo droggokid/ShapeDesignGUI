@@ -1,0 +1,24 @@
+(BOUNDING-BOX (0 0) (900 500))
+(DRAW black
+  (CIRCLE (220 280) 120)
+
+  (LINE (220 280) (340 280))
+  (LINE (220 280) (257 394))
+  (LINE (220 280) (228 400))
+  (LINE (220 280) (149 377))
+  (LINE (220 280) (285 195))
+
+  (TEXT-AT (355 300) "Scala")
+  (TEXT-AT (260 420) "Lisp")
+  (TEXT-AT (120 410) "Haskell")
+  (TEXT-AT (35 220) "Prolog")
+  (TEXT-AT (340 190) "other")
+
+  (TEXT-AT (280 325) "20%")
+  (TEXT-AT (242 375) "4%")
+  (TEXT-AT (165 360) "11%")
+  (TEXT-AT (160 245) "49%")
+  (TEXT-AT (275 220) "16%")
+
+  (TEXT-AT (70 80) "Popularity of Programming Languages")
+)

@@ -11,7 +11,25 @@ object Parser {
     if (rest.nonEmpty)
       throw new RuntimeException("Unexpected tokens: " + rest.mkString(" "))
 
+    validateTopLevel(commands)
     commands
+  }
+
+  private def validateTopLevel(commands: List[Command]): Unit = {
+    if (commands.isEmpty) {
+      throw new RuntimeException("Program must start with (BOUNDING-BOX (x1 y1) (x2 y2))")
+    }
+
+    commands.head match {
+      case _: BoundingBox =>
+      case _ =>
+        throw new RuntimeException("First command must be BOUNDING-BOX")
+    }
+
+    val boxCount = commands.count(_.isInstanceOf[BoundingBox])
+    if (boxCount != 1) {
+      throw new RuntimeException("Program must contain exactly one BOUNDING-BOX command")
+    }
   }
 
   private def tokenize(input: String): List[String] = {

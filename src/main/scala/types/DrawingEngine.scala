@@ -151,7 +151,7 @@ object DrawingEngine {
   def getBoundingBox(program: String): java.util.Optional[AST.BoundingBox] = {
     val commands = Parser.parse(program)
 
-    commands.reverse.collectFirst {
+    commands.collectFirst {
       case box: BoundingBox => box
     } match {
       case Some(box) => java.util.Optional.of(box)
