@@ -1,12 +1,9 @@
-package types;
+package types
+
 import scala.jdk.CollectionConverters._
 
-object Hello {
-  def greet(): String = "Hello from Scala"
-}
-
 object Draw {
-  def drawLine(x0: Int, y0: Int, x1: Int, y1: Int): java.util.List[(Int, Int)] = {
+  def drawLineSc(x0: Int, y0: Int, x1: Int, y1: Int): List[(Int, Int)] = {
     var points = List.empty[(Int, Int)]
     var x = x0
     var y = y0
@@ -20,7 +17,7 @@ object Draw {
       points = (x, y) :: points
 
       if (x == x1 && y == y1)
-        return points.reverse.asJava
+        return points
 
       val e2 = 2 * err
 
@@ -34,10 +31,30 @@ object Draw {
         y += sy
       }
     }
-    points.reverse.asJava
+    points
   }
 
-  def drawCircle(x0: Int, y0: Int, r: Int): java.util.List[(Int, Int)] = {
+  def drawLine(x0: Int, y0: Int, x1: Int, y1: Int): java.util.List[(Int, Int)] = {
+    drawLineSc(x0, y0, x1, y1).reverse.asJava
+  }
+
+
+  def drawRectangleSc(x0: Int, y0: Int, x1: Int, y1: Int): List[(Int, Int)] = {
+    var points = List.empty[(Int, Int)]
+
+    points = drawLineSc(x0, y0, x1, y0) ::: points
+    points = drawLineSc(x1, y0, x1, y1) ::: points
+    points = drawLineSc(x1, y1, x0, y1) ::: points
+    points = drawLineSc(x0, y1, x0, y0) ::: points
+
+    points
+  }
+
+  def drawRectangle(x0: Int, y0: Int, x1: Int, y1: Int): java.util.List[(Int, Int)] = {
+    drawRectangleSc(x0, y0, x1, y1).reverse.asJava
+  }
+
+  def drawCircleSc(x0: Int, y0: Int, r: Int): List[(Int, Int)] = {
     var points = List.empty[(Int, Int)]
     var x = r
     var y = 0
@@ -65,6 +82,10 @@ object Draw {
       }
     }
 
-    points.reverse.asJava
+    points
+  }
+
+  def drawCircle(x0: Int, y0: Int, r: Int): java.util.List[(Int, Int)] = {
+    drawCircleSc(x0, y0, r).reverse.asJava
   }
 }

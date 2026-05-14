@@ -1,0 +1,39 @@
+(BOUNDING-BOX (0 0) (900 500))
+(DRAW black
+  (RECTANGLE (420 180) (820 330))
+  (LINE (420 180) (820 180))
+  (LINE (420 180) (420 330))
+)
+
+(FILL gray
+  (RECTANGLE (420 285) (780 310))
+)
+
+(FILL gray
+  (RECTANGLE (420 240) (620 265))
+)
+
+(FILL gray
+  (RECTANGLE (420 195) (540 220))
+)
+
+(DRAW black
+  (RECTANGLE (420 285) (780 310))
+  (RECTANGLE (420 240) (620 265))
+  (RECTANGLE (420 195) (540 220))
+
+  (TEXT-AT (355 295) "Prolog")
+  (TEXT-AT (365 250) "Slang")
+  (TEXT-AT (365 205) "Scala")
+
+  (TEXT-AT (790 292) "16")
+  (TEXT-AT (630 247) "9")
+  (TEXT-AT (550 202) "5")
+
+  (TEXT-AT (415 150) "0")
+  (TEXT-AT (535 150) "5")
+  (TEXT-AT (660 150) "10")
+  (TEXT-AT (785 150) "15")
+
+  (TEXT-AT (480 90) "What do you expect from life?")
+)
